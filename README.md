@@ -1,4 +1,4 @@
-# [Android Bootcamp]: 00  Simple Todo List
+# [Android Bootcamp]: 01   Instagram Photo Viewer
 
 This is a exercise instagram popular photo viewer
 In this app, the user can scroll down and view the instagram popular photo list
