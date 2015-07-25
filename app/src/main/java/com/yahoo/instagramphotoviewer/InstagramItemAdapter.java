@@ -63,6 +63,9 @@ public class InstagramItemAdapter extends ArrayAdapter<InstagramItem> {
             tvCommentText2.setVisibility(View.GONE);
         }
 
+        // like count
+        TextView tvLikeCount = (TextView) convertView.findViewById(R.id.likeCount);
+        tvLikeCount.setText("♡ " + item.likeCount + " likes");
 
         // image
         ImageView ivImg = (ImageView) convertView.findViewById(R.id.item_img);

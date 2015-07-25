@@ -22,6 +22,7 @@ public class InstagramItem {
     public int imageHeight;
     public ArrayList<InstagramComment> commentList;
     public int commentNumber;
+    public int likeCount;
     public static int commentLimit = 2;
 
     public InstagramItem(JSONObject rawObject) {
@@ -38,6 +39,7 @@ public class InstagramItem {
             userProfile = rawObject.getJSONObject("user").getString("profile_picture");
             imageUrl = rawObject.getJSONObject("images").getJSONObject("standard_resolution").getString("url");
             imageHeight = rawObject.getJSONObject("images").getJSONObject("standard_resolution").getInt("height");
+            likeCount = rawObject.getJSONObject("likes").getInt("count");
             // get comment
             commentList = new ArrayList<InstagramComment>();
             commentNumber = rawObject.getJSONObject("comments").getInt("count");

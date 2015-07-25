@@ -160,4 +160,16 @@
             android:layout_gravity="center_vertical"
             android:layout_centerVertical="true" />
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Like"
+        android:id="@+id/likeCount"
+        android:textColor="#033"
+        android:layout_alignBottom="@+id/item_comment_number"
+        android:layout_alignRight="@+id/commentLayout"
+        android:layout_alignEnd="@+id/commentLayout"
+        android:layout_marginRight="28dp"
+        android:layout_marginEnd="28dp" />
 </RelativeLayout>
