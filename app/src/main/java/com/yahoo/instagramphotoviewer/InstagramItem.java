@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by sinze on 7/24/15.
@@ -17,6 +18,7 @@ public class InstagramItem {
     public String caption;
     public String imageUrl;
     public String user;
+    public String userProfile;
     public int imageHeight;
     public ArrayList<InstagramComment> commentList;
     public int commentNumber;
@@ -33,6 +35,7 @@ public class InstagramItem {
             link  = rawObject.getString("link");
             caption = rawObject.getJSONObject("caption").getString("text");
             user = rawObject.getJSONObject("user").getString("username");
+            userProfile = rawObject.getJSONObject("user").getString("profile_picture");
             imageUrl = rawObject.getJSONObject("images").getJSONObject("standard_resolution").getString("url");
             imageHeight = rawObject.getJSONObject("images").getJSONObject("standard_resolution").getInt("height");
             // get comment
@@ -46,6 +49,29 @@ public class InstagramItem {
 
         } catch (Exception e) {
             Log.d("my", "parse Json error in instagram item");
+        }
+    }
+
+    public String getPostTimeText() {
+        // 1) create a java calendar instance
+        Calendar calendar = Calendar.getInstance();
+        java.util.Date now = calendar.getTime();
+        java.sql.Timestamp currentTimestamp = new java.sql.Timestamp(now.getTime());
+        Long tmpTime = Integer.parseInt(createTime) - currentTimestamp.getTime() / 1000;
+        int day = (int)(tmpTime / 86400);
+        int hour = (int) ((tmpTime % 86400) / 3600);
+        int minute = (int) ((tmpTime % 3600) / 60);
+        int sec = (int) (tmpTime % 60);
+
+        // string format
+        if (day > 0) {
+            return day + "d" + hour + "h";
+        } else if (hour > 0) {
+            return hour + "h" + minute + "m";
+        } else if (minute > 0) {
+            return minute + "m";
+        } else {
+            return sec + "s";
         }
     }
 }

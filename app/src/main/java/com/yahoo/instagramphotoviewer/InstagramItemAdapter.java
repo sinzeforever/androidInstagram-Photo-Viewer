@@ -1,6 +1,7 @@
 package com.yahoo.instagramphotoviewer;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 import java.util.List;
 
@@ -71,7 +74,28 @@ public class InstagramItemAdapter extends ArrayAdapter<InstagramItem> {
             .placeholder(R.drawable.loading)
             .into(ivImg);
 
+        // user profile
+        ImageView ivUserProfile = (ImageView) convertView.findViewById(R.id.user_icon);
+        ivImg.setImageResource(0);
+        Transformation transformation = new RoundedTransformationBuilder()
+                .borderWidthDp(1)
+                .borderColor(Color.parseColor("#f0f0f0"))
+                .cornerRadiusDp(30)
+                .oval(false)
+                .build();
+        Picasso.with(getContext())
+                .load(item.userProfile)
+                .fit()
+                .transform(transformation)
+                .into(ivUserProfile);
 
+        // header user
+        TextView tvHdUser = (TextView) convertView.findViewById(R.id.hdUser);
+        tvHdUser.setText(item.user);
+
+        // post time
+        TextView tvPostTime = (TextView) convertView.findViewById(R.id.postTime);
+        tvPostTime.setText(item.getPostTimeText());
         return convertView;
     }
 }

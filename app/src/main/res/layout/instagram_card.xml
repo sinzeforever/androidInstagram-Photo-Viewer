@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.3dp"
+        android:background="#eee"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/lineTop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:editable="false"
+        android:layout_marginBottom="1dp" />
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/item_img"
         android:minHeight="200dp"
         android:scaleType="fitCenter"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/hdLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,6 +50,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
+        android:id="@+id/commentLayout"
         android:layout_below="@+id/item_comment_number"
         android:layout_alignLeft="@+id/item_comment_number"
         android:layout_alignStart="@+id/item_comment_number">
@@ -79,5 +94,70 @@
             android:layout_below="@+id/comment_text1"
             android:layout_toRightOf="@+id/comment_user2"
             android:layout_toEndOf="@+id/comment_user2" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.3dp"
+        android:background="#eee"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/line"
+        android:layout_below="@+id/commentLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:editable="false" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:background="#f0f0f0"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/padding"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:editable="false" />
+
+    <RelativeLayout
+        android:id= "@+id/hdLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ddffffff"
+        android:layout_below="@+id/lineTop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:minHeight="40dp"
+            android:id="@+id/user_icon"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hdUser"
+            android:id="@+id/hdUser"
+            android:layout_marginRight="28dp"
+            android:layout_marginEnd="28dp"
+            android:layout_toRightOf="@+id/user_icon"
+            android:gravity="center_vertical"
+            android:textColor="#124"
+            android:textSize="15dp"
+            android:paddingLeft="5dp"
+            android:layout_centerVertical="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posttime"
+            android:id="@+id/postTime"
+            android:layout_marginRight="28dp"
+            android:layout_marginEnd="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_centerVertical="true" />
     </RelativeLayout>
 </RelativeLayout>
