@@ -59,7 +59,7 @@ public class InstagramItem {
         Calendar calendar = Calendar.getInstance();
         java.util.Date now = calendar.getTime();
         java.sql.Timestamp currentTimestamp = new java.sql.Timestamp(now.getTime());
-        Long tmpTime = Integer.parseInt(createTime) - currentTimestamp.getTime() / 1000;
+        Long tmpTime = currentTimestamp.getTime() / 1000 - Integer.parseInt(createTime);
         int day = (int)(tmpTime / 86400);
         int hour = (int) ((tmpTime % 86400) / 3600);
         int minute = (int) ((tmpTime % 3600) / 60);
