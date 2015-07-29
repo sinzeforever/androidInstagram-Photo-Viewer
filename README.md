@@ -29,6 +29,8 @@ The following **bonus** features are implemented:
 * [ ] Allow user to view all comments for an image within a separate activity or dialog fragment
 * [ ] Allow video posts to be played in full-screen using the VideoView
 
+##Video WalkThrough
+
 
 ![Video Walkthrough](instagramPhotoViewer.gif) 
 
