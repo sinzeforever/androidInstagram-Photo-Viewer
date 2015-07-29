@@ -3,18 +3,53 @@
 This is a exercise instagram popular photo viewer
 In this app, the user can scroll down and view the instagram popular photo list
 
-Completed user stories:
+Time spent: **10** hours spent in total
 
-For each photo displayed, user can see the following details:
- * [x] Required: User can scroll through current popular photos from Instagram
- * [x] Required: Show Graphic, Caption, Username of each photo
- * [x] Required: Show relative timestamp, like count, user profile image of each photo
-  
-Extention:
- * Show latest comment for each photo (bonus: show last 2 comments)
- * Display each photo with the same style and proportions as the real Instagram (see screens below)
- * Display each user profile image using a RoundedImageView
- * Display a nice default placeholder graphic for each image during loading (read more about Picasso)
- * Improve the user interface through styling and coloring
+## User Stories
 
+The following **required** functionality is completed:
+
+* [x] User can **scroll through current popular photos** from Instagram
+* [x] For each photo displayed, user can see the following details:
+  * [x] Graphic, Caption, Username
+  * [x] Relative timestamp, like count, user profile image
+
+The following **optional** features are implemented:
+
+* [ ] User can **pull-to-refresh** popular stream to get the latest popular photos
+* [x] Show latest comments for each photo
+* [x] Display each photo with the same style and proportions as the real Instagram
+* [x] Display each user profile image using a RoundedImageViewDisplay each user profile image using a [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)
+* [x] Display a nice default placeholder graphic for each image during loading
+* [x] Improved the user interface through styling and coloring
+
+The following **bonus** features are implemented:
+
+* [x] Show last 2 comments for each photo
+* [ ] Allow user to view all comments for an image within a separate activity or dialog fragment
+* [ ] Allow video posts to be played in full-screen using the VideoView
+
+Video Walkthrough
 ![Video Walkthrough](instagramPhotoViewer.gif) 
+
+## Open-source libraries used
+
+- [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
+- [Picasso](http://square.github.io/picasso/) - Image loading and caching library for Android
+- [RoundImage](https://github.com/vinc3m1/RoundedImageView) - Round image view for Android
+
+## License
+
+    Copyright [2015] [sinzeforever]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
